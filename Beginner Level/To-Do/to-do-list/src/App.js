@@ -2,10 +2,11 @@ import "./App.css";
 import Header from "./MyComponents/Header";
 import {Footer} from "./MyComponents/Footer";
 import {ToDos} from "./MyComponents/ToDos"
+import {useState} from "react";
 
 function App() {
-  const onDelete = () => {
-    console.log("Deleting...");
+  const onDelete = (todo) => {
+    console.log("Deleting...", todo);
   }
   let todos = [{
     sno: 1,

@@ -6,7 +6,7 @@ export const ToDos = (props) => {
     <div className="container">
       <h3 className='text-center'>To-Do List</h3>
         {props.todos.map((todo) => {
-          return <ToDoItem todo={todo} onDelete={props.onDelete}/>
+          return <ToDoItem todo={todo} key={todo.sno} onDelete={props.onDelete}/>
         })}
       
     </div>
