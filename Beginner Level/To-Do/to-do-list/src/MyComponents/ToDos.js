@@ -1,7 +1,14 @@
 import React from 'react'
+import {ToDoItem} from "./ToDoItem"
 
-export default function ToDos() {
+export const ToDos = (props) => {
   return (
-    <div>ToDos</div>
+    <div className="container">
+      <h3 className='text-center'>To-Do List</h3>
+        {props.todos.map((todo) => {
+          return <ToDoItem todo={todo} onDelete={props.onDelete}/>
+        })}
+      
+    </div>
   )
 }
