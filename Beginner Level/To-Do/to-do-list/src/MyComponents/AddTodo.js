@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
-export const AddTodo = () => {
+export const AddTodo = (props) => {
+    const [title, setTitle] = useState("");
+    const [desc, setDesc] = useState("");
+    const submit= () => {
+
+    }
   return (
     <div className="container my-3">
     <h3>Add a Todo</h3>
-      <form>
+      <form onSubmit={props.Ad}>
         <div class="mb-3">
           <label for="title" class="form-label">
             Title
           </label>
           <input
             type="text"
+            value={title}
+            onChange={(e) => {
+                setTitle(e.target.value);
+            }}
             class="form-control"
             id="title"
             aria-describedby="emailHelp"
@@ -22,6 +31,10 @@ export const AddTodo = () => {
           </label>
           <input
             type="text"
+            value={desc}
+            onChange={(e) => {
+                setDesc(e.target.value);
+            }}
             class="form-control"
             id="desc"
           />
